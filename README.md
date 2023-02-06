@@ -1,24 +1,75 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column              | Type              | Options                  |
+| ------------------- | ----------------- | ------------------------ |
+| name                | string            | null:false               |
+| nickname            | string            | null:false               |
+| email               | string            | null:false , unique:true |
+| encrypted_password  | string            | null:false               |
+| tel                 | string            | null:false               |
+| division_id         | integer           | null:false               |
+| city_area           | string            | null:false               |
 
-* Ruby version
+## Association
 
-* System dependencies
+- has_many :vegetables
+- has_many :eats
+- has_many :vorders
+- has_many :eorders
 
-* Configuration
+## vegetablesテーブル
 
-* Database creation
+| Column             | Type              | Option                       |
+| ------------------ | ----------------- | ---------------------------- |
+| vegetable          | string            | null:false                   |
+| price              | integer           | null:false                   |
+| quantity           | integer           | null:false                   |
+| place_id           | integer           | null:false                   |
+| text               | text              |                              |
 
-* Database initialization
+## Association
 
-* How to run the test suite
+- belongs_to :user
+- has_one :vorder
 
-* Services (job queues, cache servers, search engines, etc.)
+## eatsテーブル
 
-* Deployment instructions
+| Column             | Type              | Option                       |
+| ------------------ | ----------------- | ---------------------------- |
+| store_name         | string            | null:false                   |
+| address            | string            | null:false                   |
+| menu               | string            | null:false                   |
+| price              | integer           | null:false                   |
+| quantity           | integer           | null:false                   |
+| text               | text              |                              |
 
-* ...
+## Association
+
+- belongs_to :user
+- has_one :eorder
+
+## vordersテーブル
+
+| Column             | Type              | Option                       |
+| ------------------ | ----------------- | ---------------------------- |
+| user               | references        | null:false, foreign_key:true |
+| vegetable          | references        | null:false, foreign_key:true |
+
+## Association
+
+- belongs_to :vegetable
+- belongs_to :user
+
+## eordersテーブル
+
+| Column             | Type              | Option                       |
+| ------------------ | ----------------- | ---------------------------- |
+| user               | references        | null:false, foreign_key:true |
+| eat                | references        | null:false, foreign_key:true |
+
+## Association
+
+- belongs_to :eat
+- belongs_to :user
