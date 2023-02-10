@@ -1,0 +1,62 @@
+<%= render "shared/header" %>
+<div class="toppage">
+  <div class="top-page">
+    <img src="/vegetable.jpg", class=list-pict >
+    <div class="sell-main">
+      <h2 class="sell-title">商品の情報を入力</h2>
+      <%= form_with model: @vegetable, url: vegetables_path, local: true do |f| %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+        商品画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+      <div class="new-items">
+        <div class="weight-bold-text">
+          商品名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :vegetable, class:"items-text", id:"item-name", placeholder:"商品名（必須 30文字まで)", maxlength:"30" %>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            商品の説明
+          </div>
+          <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"商品の説明 （例）通常より小ぶり。傷あり。大量に収穫した為出品。" ,rows:"7" ,maxlength:"500" %>
+        </div>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            商品の価格
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :price, class:"vegetable-info", id:"item-info", placeholder:"商品の価格 （例）100"  %>円
+        </div>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            商品の個数
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :quantity, class:"vegetable-info", id:"item-info", placeholder:"商品の個数 （例）5" %>個
+        </div>
+        <div class="form">
+          <div class="weight-bold-text">
+            販売場所
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"select-box", id:"place-name"}) %>
+        </div>
+      </div>
+      <div class="sell-btn-contents">
+        <%= f.submit "出品する" ,class:"sell-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>
