@@ -1,0 +1,32 @@
+.content_btn{
+  text-align: center;
+  margin-right: 60%;
+  margin-top: 15px;
+}
+
+.item-green-btn{
+  text-decoration: none;
+  border: 1px solid rgb(161, 204, 101);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(241, 147, 39);
+  background-color: rgb(218, 242, 98);
+}
+
+.item-destroy{
+  text-decoration: none;
+  border: 1px solid rgb(161, 204, 101);
+  border-radius: 5px;
+  padding: 10px;
+  color: rgb(50, 33, 13);
+  background-color: rgb(210, 212, 197);
+}
+
+.item-img-content{
+  height: 100vh;
+}
+
+.content_post{
+  margin-top: 15px;
+}

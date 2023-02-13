@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+<div class="contents-row">
+  <p class="userpage-name">★<%= @nickname %>さんの出品一覧</p>
+  <% @vegetables.each do |vegetable| %>
+    <%= link_to vegetable_path(vegetable.id), class:"user-show" do %>
+    <div class="content_post">
+      <div>
+      <%= image_tag vegetable.image ,class:"item-box-img" %>
+      </div>
+      <div>
+        <p class="user-showinfo"><%= vegetable.vegetable %></p>
+        <p class="user-showinfo"><%= vegetable.text %></p>
+        <p class="user-showinfo"><%= vegetable.price %>円</p>
+        <p class="user-showinfo", id="user-info"><%= vegetable.quantity %>個</p>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+<%= render "shared/footer" %>
