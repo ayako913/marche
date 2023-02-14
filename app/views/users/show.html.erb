@@ -2,6 +2,7 @@
 <div class="contents-row">
   <p class="userpage-name">★<%= @nickname %>さんの出品一覧</p>
   <% @vegetables.each do |vegetable| %>
+  <div class="userpage-content">
     <%= link_to vegetable_path(vegetable.id), class:"user-show" do %>
     <div class="content_post">
       <div>
@@ -15,6 +16,12 @@
       </div>
     </div>
     <% end %>
+    <div class="userpage-btn">
+      <%= link_to "商品の編集", "#", method: :get, class: "item-green-btn" %>
+      <p class="or-text"></p>
+      <%= link_to "削除", vegetable_path(vegetable.id), method: :delete, class:"item-destroy" %>
+    </div>
+  </div>
   <% end %>
 </div>
 <%= render "shared/footer" %>
