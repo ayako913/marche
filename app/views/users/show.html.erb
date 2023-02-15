@@ -13,13 +13,16 @@
         <p class="user-showinfo"><%= vegetable.text %></p>
         <p class="user-showinfo"><%= vegetable.price %>円</p>
         <p class="user-showinfo", id="user-info"><%= vegetable.quantity %>個</p>
+        <p class="user-showinfo"><%= vegetable.place.name %></p>
       </div>
     </div>
     <% end %>
     <div class="userpage-btn">
+    <% if current_user.id == vegetable.user_id %>
       <%= link_to "商品の編集", "#", method: :get, class: "item-green-btn" %>
       <p class="or-text"></p>
       <%= link_to "削除", vegetable_path(vegetable.id), method: :delete, class:"item-destroy" %>
+    <% end %>
     </div>
   </div>
   <% end %>
