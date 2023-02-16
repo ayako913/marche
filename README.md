@@ -1,75 +1,40 @@
-# テーブル設計
-
-## usersテーブル
-
-| Column              | Type              | Options                  |
-| ------------------- | ----------------- | ------------------------ |
-| name                | string            | null:false               |
-| nickname            | string            | null:false               |
-| email               | string            | null:false , unique:true |
-| encrypted_password  | string            | null:false               |
-| tel                 | string            | null:false               |
-| division_id         | integer           | null:false               |
-| city_area           | string            | null:false               |
-
-## Association
-
-- has_many :vegetables
-- has_many :eats
-- has_many :vorders
-- has_many :eorders
-
-## vegetablesテーブル
-
-| Column             | Type              | Option                       |
-| ------------------ | ----------------- | ---------------------------- |
-| vegetable          | string            | null:false                   |
-| price              | integer           | null:false                   |
-| quantity           | integer           | null:false                   |
-| place_id           | integer           | null:false                   |
-| text               | text              |                              |
-
-## Association
-
-- belongs_to :user
-- has_one :vorder
-
-## eatsテーブル
-
-| Column             | Type              | Option                       |
-| ------------------ | ----------------- | ---------------------------- |
-| store_name         | string            | null:false                   |
-| address            | string            | null:false                   |
-| menu               | string            | null:false                   |
-| price              | integer           | null:false                   |
-| quantity           | integer           | null:false                   |
-| text               | text              |                              |
-
-## Association
-
-- belongs_to :user
-- has_one :eorder
-
-## vordersテーブル
-
-| Column             | Type              | Option                       |
-| ------------------ | ----------------- | ---------------------------- |
-| user               | references        | null:false, foreign_key:true |
-| vegetable          | references        | null:false, foreign_key:true |
-
-## Association
-
-- belongs_to :vegetable
-- belongs_to :user
-
-## eordersテーブル
-
-| Column             | Type              | Option                       |
-| ------------------ | ----------------- | ---------------------------- |
-| user               | references        | null:false, foreign_key:true |
-| eat                | references        | null:false, foreign_key:true |
-
-## Association
-
-- belongs_to :eat
-- belongs_to :user
+# アプリケーション名
+marche
+# アプリケーション概要
+農家の方や飲食店の方が余ってしまった商品を通常より安く簡単に販売できるようにすることで食品ロスを削減できる。
+またそれを購入する方は通常より安く入手することができる。
+# URL
+https://marche.onrender.com（作成中）
+# テスト用アカウント
+作成中
+# 利用方法
+商品出品  
+1.トップページのヘッダーからユーザー新規登録を行う  
+2.ユーザー登録の区分が3.農家と4.店舗の方はトップページのヘッダーから出品する  
+商品購入  
+1.トップページの検索から買い物したい地域を入力し検索ボタンを押す  
+2.検索した地域で出品がある場合は一覧で表示されるので欲しい商品（画像・テキスト）をクリックする  
+3.詳細画面へ遷移し購入する場合は購入画面へ進むボタンを押す  
+4.クレジット情報や個数を入力し購入ボタンを押す  
+# アプリケーションを作成した背景
+親戚に農家がおり市場に出せない野菜の処理に困ることがあるという問題が判明した。市場に出せない野菜を簡単に出品できるサイトがあれば問題を解決できるのではないかと仮説を立てた。また、飲食店でも作り過ぎてしまった食品を廃棄せざるおえないというニュースや物価上昇が続く中いかに安く購入できるかという問題もある為、農家・飲食店・顧客の間で出品・購入ができるアプリケーションを開発することにした。
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/1z1gsyQI0PSCz4jsvg3cLlWJDGMvXI4iumvZRJuXzoY8/edit#gid=982722306
+# 実装した機能についての画像やGIFおよびその説明
+[![Image from Gyazo](https://i.gyazo.com/2d5196cec266bb91008caceeaf77dc57.jpg)](https://gyazo.com/2d5196cec266bb91008caceeaf77dc57)  
+トップページ画面です。買い物したい地域を入力して検索します。  
+その他作成中です。
+# 実装予定の機能
+作成中
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/51a249a710c71aedec780d02f9e5c46a.png)](https://gyazo.com/51a249a710c71aedec780d02f9e5c46a)
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/3f7b59940bfb59a93d38fdecab505252.png)](https://gyazo.com/3f7b59940bfb59a93d38fdecab505252)
+# 開発環境
+・フレームワーク:Ruby on rails   
+・テキストエディター:Visual Studio Code  
+他作成中
+# ローカルでの動作方法
+作成中
+# 工夫したポイント
+作成中
