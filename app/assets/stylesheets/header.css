@@ -1,0 +1,69 @@
+.top-page-header{
+  background-color: rgb(245, 218, 234);
+  width: 100%;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.root{
+  margin-left: 20px;
+  font-size: 50px;
+  font-weight: 800;
+  text-decoration: none;
+  color: rgb(219, 149, 20);
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #f40ce5;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #f40ce5;
+  margin-right: 3vw;
+  border: 2px solid rgb(241, 79, 79);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #f40ce5;
+  border: 2px solid rgb(241, 79, 79);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #f40ce5;
+  margin-right: 3vw;
+  border: 2px solid rgb(241, 79, 79);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.exhibit{
+  text-decoration: none;
+  color: #f40ce5;
+  margin-right: 3vw;
+  border: 2px solid rgb(241, 79, 79);
+  border-radius: 7px;
+  padding: 5px;
+}

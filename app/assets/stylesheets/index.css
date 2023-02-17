@@ -1,0 +1,39 @@
+.list-pict {
+  height: 100%;
+  width: 100%;
+  opacity: 40%;
+}
+
+.toppage{
+  background-color: rgb(240, 227, 235);
+}
+
+.main-page{
+  position: relative;
+}
+
+.search{
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.search-input{
+  height: 10vh;
+  width: 30vw;
+  border: 2px solid rgb(14, 14, 13);
+  border-radius: 15px;
+}
+
+.search-btn{
+  height: 10vh;
+  width: 5vw;
+  border-radius: 15px;
+}
+
+.info{
+  margin: 25px auto 35px;
+  font-size: 20px;
+  color: rgb(8, 8, 8);
+}

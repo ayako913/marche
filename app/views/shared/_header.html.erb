@@ -1,0 +1,21 @@
+<header class='top-page-header'>
+  <div class='nav'>
+    <div class='lists-left'>
+      <%= link_to 'MARCHE', root_path, class: "root" %></li>
+    </div>
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
+        <% if current_user.division_id == 3 %>
+          <li><%= link_to '出品', new_vegetable_path, class: "exhibit" %></li>
+        <% elsif current_user.division_id == 4 %>
+          <li><%= link_to '出品', "#", class: "exhibit" %></li>
+        <% end %>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
