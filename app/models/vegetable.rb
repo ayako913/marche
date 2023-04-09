@@ -3,6 +3,7 @@ class Vegetable < ApplicationRecord
   belongs_to :place
   has_one_attached :image
   belongs_to :user
+  has_many :vorders
 
   validates :vegetable, presence: true
   validates :price, presence: true
