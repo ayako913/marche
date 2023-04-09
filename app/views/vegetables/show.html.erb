@@ -1,0 +1,23 @@
+<%= render "shared/header" %>
+<div class="item-img-content">
+  <div class="content_post">
+    <div>
+      <%= image_tag @vegetable.image ,class:"item-box-img" %>
+    </div>
+    <div class="content_info">
+      <p class="user-showinfo"><%= @vegetable.vegetable %></p>
+      <p class="user-showinfo"><%= @vegetable.text %></p>
+      <span class="user-showinfo"><%= @vegetable.price %>円　</span>
+      <span class="user-showinfo", id="user-info"><%= @vegetable.quantity %>個</span>
+      <p class="user-showinfo"><%= @vegetable.place.name %></p>
+    </div>
+  </div>
+  <div class="content_btn">
+    <% if user_signed_in? &&  current_user.id != @vegetable.user_id %>
+      <%# unless @vegetable.order.present? %>
+        <%= link_to "購入画面に進む", vegetable_vorders_path(@vegetable.id) ,class:"item-green-btn"%>
+      <%# end %>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>

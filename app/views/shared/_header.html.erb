@@ -10,7 +10,7 @@
         <% if current_user.division_id == 3 %>
           <li><%= link_to '出品', new_vegetable_path, class: "exhibit" %></li>
         <% elsif current_user.division_id == 4 %>
-          <li><%= link_to '出品', "#", class: "exhibit" %></li>
+          <li><%= link_to '出品', new_eat_path, class: "exhibit" %></li>
         <% end %>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
